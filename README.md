@@ -16,6 +16,6 @@ Python, Django, Celery, Redis, oop, Html...
 ![Logo](https://1000logos.net/wp-content/uploads/2020/08/Redis-Logo.png)
 
 
-![Logo](https://btech.id/media/images/Page/2023/04/05/postgresql-logo-1-350x220-90992449)
+![Logo](https://media.dev.to/cdn-cgi/image/width=1280,height=720,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fd37epnfn0ajgb37i3lfz.png)
 
 
