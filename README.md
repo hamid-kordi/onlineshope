@@ -5,17 +5,65 @@ In this project, we are going to create a small online store using the Python la
 
 
 ## 🛠 Skills
-Python, Django, Celery, Redis, oop, Html...
+Python, Django, Celery, Redis, PostgresSQL, oop, Html.
 
 
-![Logo](https://www.djangoproject.com/m/img/logos/django-logo-negative.svg)
+## Features
+
+- SMS service
+- Queue management service
 
 
-![Logo](https://g2tech.co/content/images/2023/05/python-celery-1.png)
 
-![Logo](https://1000logos.net/wp-content/uploads/2020/08/Redis-Logo.png)
+## Run Locally
+
+Activate your venv (in linux):
+
+```bash
+    source venv/bin/activate
+```
+Clone the project:
+
+```bash
+  git clone https://github.com/hamid-kordi/onlineshope.git
+```
+
+Go to the project directory(in manage.py directory)
+
+```bash
+  cd onlineshope
+```
+
+Install dependencies:
+
+```bash
+  pip Install -r requirements.txt
+```
+
+Add class for database and run:
+
+```bash
+  python manage.py makemigrations
+  python manage.py migrate
+  python manage.py runserver
+```
 
 
-![Logo](https://media.dev.to/cdn-cgi/image/width=1280,height=720,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fd37epnfn0ajgb37i3lfz.png)
 
+
+![Logo](https://www.djangoproject.com/m/img/logos/django-logo-negative.svg?w=50&h=50)
+
+
+
+![Logo](https://g2tech.co/content/images/2023/05/python-celery-1.png?w=5&h=5)
+
+![Logo](https://1000logos.net/wp-content/uploads/2020/08/Redis-Logo.png?w=5&h=5)
+
+
+![Logo](https://btech.id/media/images/Page/2023/04/05/postgresql-logo-1-350x220-90992449?w=5&h=5)
+
+
+## License
+
+[Mongard](https://www.mongard.ir/)
 
