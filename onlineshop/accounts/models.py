@@ -9,19 +9,22 @@ class User(AbstractBaseUser):
     full_name = models.CharField(max_length=20)
     is_active = models.BooleanField(default=True)
     is_admin = models.BooleanField(default=False)
+    is_superuser = models.BooleanField(default =False)
 
 
-    object = UserMnagers()
+    objects = UserMnagers()
     USERNAME_FIELD = 'phone_number'
     REQUIRED_FIELDS = ['email','full_name']
 
     def __str__(self):
         return self.email
 
-    def has_perm(self,perm,obj=None):
-        return True
-    def has_perm_module(self,app_lable):
-        return True
+
+    def has_perm(self, perm, obj=None):
+        return self.is_superuser
+
+    def has_module_perms(self, app_label):
+        return self.is_superuser
 
     @property
     def  is_staff(self):
@@ -30,9 +33,10 @@ class User(AbstractBaseUser):
 
 class OtpCode(models.Model):
     phone_number = models.CharField(max_length=11,unique=True)
-    code = models.PositiveSmallIntegerField()
+    code = models.PositiveSmallIntegerField(blank = True,null= True)
     created = models.DateTimeField(auto_now=True)
 
     def __str__(self):
         return f'{self.phone_number} - {self.code} - {self.created}'
+
 

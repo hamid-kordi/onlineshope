@@ -50,15 +50,19 @@ class  UserRegisterForm(forms.Form):
 
     def clean_email(self):
         email = self.cleaned_data['email']
-        user = User.object.filter(email=email).exists()
+        user = User.objects.filter(email=email).exists()
         if user:
             raise ValidationError('This email already exists')
         return email
 
     def clean_phone(self):
         phone = self.cleaned_data['phone']
-        user = User.object.filter(phone_number=phone).exists()
+        user = User.objects.filter(phone_number=phone).exists()
         if user:
             raise ValidationError('This phone number already exists')
         OtpCode.objects.filter(phone_number=phone).delete()
         return phone
+
+
+class VerifyCodeForm(forms.Form):
+    code = forms.IntegerField(required = True)
