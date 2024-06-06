@@ -1,7 +1,20 @@
 {% extends 'base.html' %}
+{% load static %}
+{% block extra_headers %}
+<link rel="stylesheet" href="{% static 'home/css/style.css' %}">
+{% endblock %}
 
 
 {% block content %}
 
-<p> hello every body </p>
+{% for product in products %}
+        <div class="card" style="width: 18rem;">
+            <img src=" {{product.image.url}} " class="card-img-top" alt="...">
+            <div class="card-body">
+            <h5 class="card-title">name: {{ product.name }}</h5>
+            <p class="card-text">category: {{product.category}}</p>
+            <a href="{{ product.get_absolute_url }}" class="btn btn-primary">detail</a>
+            </div>
+        </div>
+{% endfor %}
 {% endblock %}
