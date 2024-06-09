@@ -1,9 +1,11 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container-fluid">
         <div class="navbar-nav">
-            <a class="nav-link active" href="#">HOME</a>
-            <a class="nav-link active" href="#">REGISTER</a>
-
+            <a class="nav-link active" href="{% url 'home:home' %}">HOME</a>
+            <a class="nav-link active" href="{% url 'accounts:register_user' %}">REGISTER</a>
+            <!-- {% if reauest.user.is_admin %} -->
+            <!-- {% endif %} -->
+            <a class="nav-link active" href="{% url 'home:bucket' %}">BUCKET</a>
 
 
         </div>
