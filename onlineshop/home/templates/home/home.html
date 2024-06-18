@@ -7,8 +7,28 @@
 
 {% block content %}
 
+
+{% for categoy in categoris %}
+<div class="btn-group">
+    <a href="{{ categoy.get_absolute_url }}" class="btn btn-danger">{{ categoy.name }}</a>
+    <button type="button" class="btn btn-danger dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
+      <span class="visually-hidden">Toggle Dropdown</span>
+    </button>
+    <ul class="dropdown-menu">
+        {% for sub in categoy.products.all %}
+      <li><a class="dropdown-item" href="{{ sub.get_absolute_url }}">{{ sub.name }}</a></li>
+        {% endfor %}
+
+
+    </ul>
+  </div>
+{% endfor %}
+
+<br><br>
+
+
 {% for product in products %}
-        <div class="card" style="width: 18rem;">
+        <div class="card" style="width: 18rem; display: inline-block;">
             <img src=" {{product.image.url}} " class="card-img-top" alt="...">
             <div class="card-body">
             <h5 class="card-title">name: {{ product.name }}</h5>

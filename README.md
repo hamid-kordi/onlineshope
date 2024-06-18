@@ -48,6 +48,13 @@ Add class for database and run:
   python manage.py runserver
 ```
 
+For see and run worker celery :
+see this repo and do it one by one :
+
+‍```bash
+https://github.com/amirbigg/oneFile-codes/blob/master/supervisor_commands.txt
+
+```
 
 
 

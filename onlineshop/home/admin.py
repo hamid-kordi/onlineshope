@@ -1,5 +1,6 @@
 from django.contrib import admin
-from .models import Category,Product
+from .models import Category, Product
+
 # Register your models here.
 
 admin.site.register(Category)
@@ -7,4 +8,4 @@ admin.site.register(Category)
 
 @admin.register(Product)
 class AdminProduct(admin.ModelAdmin):
-    raw_id_fields = ('category',)
+    raw_id_fields = ("category",)
