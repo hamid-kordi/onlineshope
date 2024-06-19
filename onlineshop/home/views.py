@@ -5,6 +5,7 @@ from django.shortcuts import get_object_or_404
 from . import tasks
 from django.contrib import messages
 from utils import IsAdminUserMixin
+from orders.forms import CartAddForm
 
 # Create your views here.
 
@@ -24,10 +25,12 @@ class HomeVeiw(View):
 
 
 class ProductDetailView(View):
+    form_class = CartAddForm
 
     def get(self, request, slug):
+        form = self.form_class
         product = get_object_or_404(Product, slug=slug)
-        return render(request, "home/details.html", {"product": product})
+        return render(request, "home/details.html", {"product": product, "form": form})
 
 
 class BucketHome(IsAdminUserMixin, View):
