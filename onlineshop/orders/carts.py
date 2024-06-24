@@ -11,6 +11,10 @@ class Cart:
             cart = self.session[CARD_SESSIO_ID] = {}
         self.cart = cart
 
+    def __len__(self):
+
+        return sum(item["quantity"] for item in self.cart.values())
+
     def __iter__(self):
         product_ids = self.cart.keys()
         products = Product.objects.filter(id__in=product_ids)
@@ -30,3 +34,16 @@ class Cart:
 
     def save(self):
         self.session.modified = True
+
+    def total_price(self):
+        return sum(int(item["price"]) * item["quantity"] for item in self.cart.values())
+
+    def remove(self, product):
+        product_id = str(product.id)
+        if product_id in self.cart:
+            del self.cart[product_id]
+            self.save()
+
+    def clear(self):
+        del self.session[CARD_SESSIO_ID]
+        self.save

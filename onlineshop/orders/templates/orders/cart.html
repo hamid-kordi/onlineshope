@@ -10,6 +10,7 @@
         <th scope="col">quantity</th>
         <th scope="col">price</th>
         <th scope="col">total price</th>
+        <th scope="col">delete </th>
       </tr>
     </thead>
     
@@ -21,10 +22,21 @@
         <td>{{ item.quantity }}</td>
         <td>{{ item.price }}</td>
         <td>{{ item.total_price }}</td>
+        <td><a href="{% url 'orders:delete_cart' item.product.id %}">delete</a></td>
+        
       </tr>
       
       {% endfor %}
+
+      <tr>
+<td>total</td>
+<td colspan="4"></td>
+<td>{{ cart.total_price }}</td>
+      </tr>
     </tbody>
     
+
   </table>
+
+  <a href="{% url 'orders:order_create' %}" class="btn btn-primary">Checkout</a>
 {% endblock %}

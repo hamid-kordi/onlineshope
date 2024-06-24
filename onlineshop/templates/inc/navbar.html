@@ -11,6 +11,8 @@
             {% else %}
             <a class="nav-link active" href="{% url 'accounts:user_login' %}">login</a>
             {% endif %}
+            <a class="nav-link active" href="{% url 'orders:cart' %}">orders {{ cart|length }}</a>
+
 
 
         </div>
