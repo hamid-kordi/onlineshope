@@ -1,5 +1,15 @@
 {% extends 'base.html' %}
 {% block content %}
 
-hello
+
+<p>order {{ order.get_total_price }}</p>
+
+<form action="{% url 'orders:copunapply' order.id %}" method="post">
+    {% csrf_token %}
+    {{ form.as_p }} 
+    <input type="submit" value="apply">
+</form>
+
+
+
 {% endblock %}

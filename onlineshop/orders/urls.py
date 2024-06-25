@@ -14,4 +14,5 @@ urlpatterns = [
         views.DeleteViewCart.as_view(),
         name="delete_cart",
     ),
+    path("apply/<int:order_id>/", views.CouponApplyView.as_view(), name="copunapply"),
 ]
