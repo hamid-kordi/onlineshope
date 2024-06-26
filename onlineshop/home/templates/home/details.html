@@ -8,7 +8,7 @@
 
 <h2>{{ product.name }}</h2>
 <small>{{ product.created }}</small><br><p>
-   price  : {{ product.price }}
+   price  : {{ product.description |safe }}
 </p>
 <img src="{{ product.image.url }}" alt="">
 <br><br>

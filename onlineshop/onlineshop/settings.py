@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     "storages",
     "django_celery_beat",
     "orders",
+    "ckeditor",
 ]
 
 MIDDLEWARE = [
@@ -97,14 +98,14 @@ redis:latest redis-server --requirepass mystrongpassword
 """
 # redis-cli -h 127.0.0.1 -p 6379 -a 1234
 
-CACHES = {
-    "default": {
-        "BACKEND": "django.core.cache.backends.redis.RedisCache",
-        "LOCATION": "redis://127.0.0.1:6379",
-    }
-}
+# CACHES = {
+#     "default": {
+#         "BACKEND": "django.core.cache.backends.redis.RedisCache",
+#         "LOCATION": "redis://myredis:1234@127.0.0.1:6379",
+#     }
+# }
 
-SESSION_ENGINE = 'django.contrib.sessions.backends.cached_db'
+# SESSION_ENGINE = 'django.contrib.sessions.backends.cached_db'
 
 
 # Password validation
